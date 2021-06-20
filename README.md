@@ -30,7 +30,7 @@ USAGE
 <!-- commands -->
 * [`clotion db [FILE]`](#clotion-db-file)
 * [`clotion help [COMMAND]`](#clotion-help-command)
-* [`clotion jot [FILE]`](#clotion-jot-file)
+* [`clotion jot [VALUE] [PRIORITY]`](#clotion-jot-value-priority)
 
 ## `clotion db [FILE]`
 
@@ -41,9 +41,9 @@ USAGE
   $ clotion db [FILE]
 
 OPTIONS
-  -f, --force
   -h, --help              show CLI help
-  -n, --name=name         name to print
+  -n, --set=set           set new alias
+  -u, --unset=unset
   -x, --extended          show extra columns
   --columns=columns       only show provided columns (comma-separated)
   --csv                   output is csv format [alias: --output=csv]
@@ -73,22 +73,21 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.2/src/commands/help.ts)_
 
-## `clotion jot [FILE]`
+## `clotion jot [VALUE] [PRIORITY]`
 
 Create an entry in database
 
 ```
 USAGE
-  $ clotion jot [FILE]
+  $ clotion jot [VALUE] [PRIORITY]
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -d, --db=db              (required) DB alias to record entry to
+  -h, --help               show CLI help
+  -p, --priority=priority  priority of the task
 
 EXAMPLE
-  $ clotion jot
-  hello world from ./src/hello.ts!
+  $ clotion jot --db <alias> value
 ```
 
 _See code: [src/commands/jot.ts](https://github.com/psych0der/clotion/blob/v0.0.1/src/commands/jot.ts)_
