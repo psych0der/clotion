@@ -54,6 +54,9 @@
     ],
     "hooks": {
       "init": "./lib/hooks/init/init"
+    },
+    "macos": {
+      "identifier": "clotion"
     }
   },
   "repository": "psych0der/clotion",
